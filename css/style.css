@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap');
+
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+
+    --font-main: 'Red Hat Display', sans-serif;
+
+    --transition: 0.8s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    /* text-decoration: none; */
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+canvas,
+picture,
+video,
+svg {
+    display: block;
+    width: 100%;
+    /* height: auto; */
+}
+
+img {
+    border-radius: 15px 15px 0 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/** Layout **/
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-repeat: no-repeat ;
+    background-size: contain;
+    background-color: var(--pale-blue);
+
+    font-family: var(--font-main);
+
+    transition: var(--transition);
+    padding: 0 50px;
+}
+
+
+article {
+    display: flex;
+    flex-direction: column;
+
+    margin: 50px auto;
+    max-width: 500px;
+    border-radius: 15px;
+    background-color: white;
+
+    transition: var(--transition);
+}
+
+/** Card Content **/
+
+.main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    gap: 2rem;
+    padding: 2rem 3rem;
+
+    transition: var(--transition);
+}
+
+.card-des {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: clamp(1.5rem, 5vw,  2rem);
+    color: var(--Dark-blue);
+}
+
+.card-des p {
+    font-weight: 500;
+    line-height: 1.5;
+    font-size: clamp(0.9rem, 4.5vw,  1.3rem);
+    color: var(--Desaturated-blue);
+}
+
+.price {
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+
+    padding: 1rem .5rem;
+    border-radius: 10px;
+    width: 100%;
+
+    background-color:  var(--Very-pale-blue);
+    transition: var(--transition);
+}
+
+.price img {
+    width: 15%;
+}
+
+.price p {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 700;
+    line-height: 1.5;
+    font-size: clamp(.9rem, 3vw,  1rem);
+    color: var(--Dark-blue);
+}
+
+.price span {
+    font-weight: 500;
+    font-size: clamp(.8rem, 3vw,  1rem);
+    color: var(--Desaturated-blue);
+}
+
+.price a {
+    font-weight: 700;
+    font-size: clamp(.8rem, 3vw,  1rem);
+    color: var(--Bright-blue);
+    transition: var(--transition);
+}
+
+.price a:hover {
+    color: hsla(245, 82%, 58%, 0.774);
+}
+
+.card-button {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+}
+
+.btn-blue {
+    padding: 1rem 0;
+
+    border-radius: 10px;
+    font-weight: 700;
+
+    font-size: clamp(.9rem, 3vw,  1.1rem);
+
+    box-shadow: 1px 14px  9px hsla(245, 75%, 52%, 0.192);
+
+    background-color: var(--Bright-blue);
+    color: white;
+
+    transition: var(--transition);
+}
+
+.btn-blue:hover {
+    background-color: hsla(245, 75%, 52%, 0.808);
+}
+
+.btn-cancel {
+    font-weight: 700;
+
+    font-size: clamp(.9rem, 3vw,  1.1rem);
+
+    color: var(--Desaturated-blue);
+    transition: var(--transition);
+}
+
+.btn-cancel:hover {
+    color: var(--Dark-blue);
+} 
+
+@media (max-width: 480px) {
+    html{
+        font-size: 15px;
+    }
+    body{
+        padding: 0 20px;
+
+        background-image: url("../images/pattern-background-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .main-card{
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    .btn-blue{
+        padding: .7rem 0;
+    }
+    
+}
